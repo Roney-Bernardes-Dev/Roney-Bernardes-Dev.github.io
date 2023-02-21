@@ -1,0 +1,88 @@
+
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header .photo {
+    width: 200px;
+    height: 180px;
+    border-radius: 55%;
+}
+
+.header .title {
+    font-family: 'Neue Machina';
+    text-align: center;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.information p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: .5rem;
+}
+
+.information  p::before { 
+    content: '';
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1.6rem;
+    height: 1.4rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.information .job::before {
+    background-image: url('../img/icons/job.svg');
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(130deg) brightness(100%) contrast(101%);
+}
+
+.information .location::before {
+    background-image: url('../img/icons/location.svg');
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(130deg) brightness(100%) contrast(101%);
+}
+
+.information .phone::before {
+    background-image: url('../img/icons/phone.svg');
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(130deg) brightness(100%) contrast(101%);
+}
+
+.information .email::before {
+    background-image: url('../img/icons/email.svg');
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(130deg) brightness(100%) contrast(101%);
+}
+
+@media only screen and (min-width: 768px) {
+    .header {
+        display: grid;
+        grid-template-areas: 
+        "photo title"
+        "photo information"
+        ;
+    }
+
+    .header .photo {
+        grid-area: photo;
+        margin: 0 auto;
+    }
+
+    .header .title {
+        grid-area: title;
+        text-align: start;
+    }
+
+    .header .information {
+        grid-area: information;
+    }
+   
+  }
